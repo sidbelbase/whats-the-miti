@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Primary Meta Tags -->
+<title>{{title}} | WHAT'S THE MITI?</title>
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="language" content="English">
+<meta name="serp-rank" position="1">
+<meta charset="UTF-8">
+<meta name="author" content="@sidbelbase">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="Nepali Date, Distractionless, Nepali Calendar, Nepali App, Flask Application">
+<meta name="title" content="Distractionless Nepali Date">
+<meta name="description" content="Nepali date with live clock right in your browser">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatsthemiti.herokuapp.com/">
+<meta property="og:title" content="Distractionless Nepali Date">
+<meta property="og:description" content="Nepali date with live clock right in your browser">
+<meta property="og:image" content="">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://whatsthemiti.herokuapp.com/">
+<meta property="twitter:title" content="Distractionless Nepali Date">
+<meta property="twitter:description" content="Nepali date with live clock right in your browser">
+<meta property="twitter:image" content="">
+
+<!-- Links -->
+<link rel="shortcut icon" type="image/svg" href="{{ url_for('static', filename='images/' + 'favicon.svg') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/' + 'bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/' + 'main.css') }}">
+<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+</head>
+
+<header class="masthead d-flex" style="background-image:url('static/images/bg.webp');">
+    <div class="container my-auto">
+        <div class="row no-gutters">
+            <div class="mx-auto main-area text-center">
+                <p id="nepalimiti">
+                    <span>{{nepali_mahina}}</span>
+                    <span class="change">{{nepali_din}}</span></p><br>
+                <p id="live-time">{{live_time}}</p>
+                <p id="date-today">{{date_today}}</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <!-- ! JAVASCRIPT SECTION -->
+    <!-- FIRST POPPER.JS AND THEN BOOTSTRAP.JS -->
+    <script src="{{ url_for('static', filename='js/' + 'jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/' + 'bootstrap.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/' + 'moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/' + 'moment-timezone-with-data.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/' + 'main.js') }}"></script>
+</body>
+
+</html>

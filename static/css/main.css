@@ -1,0 +1,47 @@
+header {
+  background: #252527;
+  background-position: center;
+  color: #e1e0e4;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  height: 100vh !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  font-display: fallback !important;
+}
+
+.main-area {
+
+  text-transform: uppercase;
+  line-height: 0.9 !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#nepalimiti {
+  font-weight: bold;
+  font-size:9vw;
+  float: left;
+}
+
+#date-today {
+  font-weight: bold;
+  font-size: 6vw;
+}
+
+#live-time {
+  font-size: 12.5vw;
+}
+
+.change {
+  padding-left: 10px !important;
+  position: absolute;
+}
