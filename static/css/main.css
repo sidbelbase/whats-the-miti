@@ -1,5 +1,6 @@
 header {
   background: #252527;
+  background-image:url('/static/images/bysmal.jpg');
   background-position: center;
   color: #e1e0e4;
   background-size: cover;
@@ -14,34 +15,27 @@ header {
 }
 
 .main-area {
-
   text-transform: uppercase;
-  line-height: 0.9 !important;
+  line-height: 1 !important;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
+  -webkit-user-drag: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-user-drag: none;
 }
 
-#nepalimiti {
+.main-area > #nepalimiti {
   font-weight: bold;
   font-size:9vw;
-  float: left;
 }
 
-#date-today {
+.main-area > #date-today {
   font-weight: bold;
   font-size: 6vw;
 }
 
-#live-time {
+.main-area > #live-time {
   font-size: 12.5vw;
-}
-
-.change {
-  padding-left: 10px !important;
-  position: absolute;
 }

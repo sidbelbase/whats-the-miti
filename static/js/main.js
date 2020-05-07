@@ -1,19 +1,21 @@
 $(document).ready(function () {
-    $('.change').each(function () {
-        $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-        }, {
-            duration: 2500,
-            easing: 'swing',
-            step: function (now) {
-                $(this).text(Math.ceil(now));
-            }
-        });
-    });
 
-    function update() {
+    function clock() {
         $('#live-time').html(moment().tz('Asia/Kathmandu').format('HH.mm.ss'));
     }
 
-    setInterval(update, 200);
+    function date() {
+        $('#date-today').html(moment().tz('Asia/Kathmandu').format('MMMM D, dddd'));
+    }
+
+    function nepalimiti() {
+        $.ajax('/api').done(function (getthat) {
+            $('#nepalimiti').text(getthat.nepali_miti);
+        });
+    }
+
+    setInterval(clock, 500);
+    setInterval(date, 60000);
+    setInterval(nepalimiti, 60000);
+
 });

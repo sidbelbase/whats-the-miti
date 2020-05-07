@@ -259,4 +259,4 @@ def is_date_in_range(year, month, day):
 def nepali_date():
     current_time = datetime.now()
     now = current_time.astimezone(tz.gettz("Asia/Kathmandu"))
-    return convert_to_nepali(now.year, now.month, now.day).split(" ")
+    return convert_to_nepali(now.year, now.month, now.day)

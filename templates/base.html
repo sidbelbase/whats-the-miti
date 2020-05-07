@@ -18,14 +18,14 @@
 <meta property="og:url" content="https://whatsthemiti.herokuapp.com/">
 <meta property="og:title" content="Distractionless Nepali Date">
 <meta property="og:description" content="Nepali date with live clock right in your browser">
-<meta property="og:image" content="">
+<meta property="og:image" content="/static/images/hero.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://whatsthemiti.herokuapp.com/">
 <meta property="twitter:title" content="Distractionless Nepali Date">
 <meta property="twitter:description" content="Nepali date with live clock right in your browser">
-<meta property="twitter:image" content="">
+<meta property="twitter:image" content="/static/images/hero.png">
 
 <!-- Links -->
 <link rel="shortcut icon" type="image/svg" href="{{ url_for('static', filename='images/' + 'favicon.svg') }}">
@@ -34,23 +34,27 @@
 <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
 </head>
 
-<header class="masthead d-flex" style="background-image:url('static/images/bg.webp');">
+<header class="masthead d-flex">
     <div class="container my-auto">
         <div class="row no-gutters">
-            <div class="mx-auto main-area text-center">
-                <p id="nepalimiti">
-                    <span>{{nepali_mahina}}</span>
-                    <span class="change">{{nepali_din}}</span></p><br>
-                <p id="live-time">{{live_time}}</p>
-                <p id="date-today">{{date_today}}</p>
+            <div class="mx-auto text-center row main-area">
+                <div class="col" id="nepalimiti">
+                    <span>{{nepali_miti}}</span>
+                </div>
+                <div class="w-100"></div>
+                <div class="col" id="live-time">
+                    <span>{{live_time}}</span>
+                </div>
+                <div class="w-100"></div>
+                <div class="col" id="date-today">
+                    <span>{{date_today}}</span>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
 <body>
-    <!-- ! JAVASCRIPT SECTION -->
-    <!-- FIRST POPPER.JS AND THEN BOOTSTRAP.JS -->
     <script src="{{ url_for('static', filename='js/' + 'jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename= 'js/' + 'bootstrap.bundle.js') }}"></script>
     <script src="{{ url_for('static', filename='js/' + 'moment.min.js') }}"></script>
