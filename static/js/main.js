@@ -15,7 +15,7 @@ $(document).ready(function () {
     }
 
     setInterval(clock, 500);
-    setInterval(date, 60000);
-    setInterval(nepalimiti, 60000);
+    setInterval(date, 1000);
+    setInterval(nepalimiti, 30000);
 
 });
