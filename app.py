@@ -11,7 +11,7 @@ def show_date():
     nepalimiti = nepali_date()
     datetoday = date_today()
     livetime = live_time()
-    title = nepalimiti + " : " + datetoday
+    title = nepalimiti
     return render_template(
         "base.html",
         live_time=livetime,

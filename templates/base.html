@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Primary Meta Tags -->
-<title>{{title}} | WHAT'S THE MITI?</title>
+<title>{{title}} | What's the miti?</title>
 <meta name="robots" content="index, follow">
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="language" content="English">
@@ -9,9 +9,11 @@
 <meta charset="UTF-8">
 <meta name="author" content="@sidbelbase">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
-<meta name="keywords" content="Nepali Date, Distractionless, Nepali Calendar, Nepali App, Flask Application">
+<meta name="keywords"
+    content="Nepali Date, Distractionless, Nepali Calendar, Nepali App, Flask Application, Firefox Extension, Chrome Extension, Nepali Extension, Opera Extension, Chromium Edge Extension">
 <meta name="title" content="Distractionless Nepali Date">
-<meta name="description" content="Nepali date with live clock right in your browser">
+<meta name="description"
+    content="Nepali date with live clock right in your browser with extension support for your favourite browser.">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -31,10 +33,10 @@
 <link rel="shortcut icon" type="image/svg" href="{{ url_for('static', filename='images/' + 'favicon.svg') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/' + 'bootstrap.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/' + 'main.css') }}">
-<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/' + 'progressive-image.css') }}">
 </head>
 
-<header class="masthead d-flex">
+<header class="masthead d-flex bgimg progressive replace">
     <div class="container my-auto">
         <div class="row no-gutters">
             <div class="mx-auto text-center row main-area">
@@ -51,7 +53,26 @@
                 </div>
             </div>
         </div>
+        <div class="row pt-3 pb-0 mt-2 mb-0">
+            <div class="col my-auto h-100 text-center text-lg-center">
+                <ul class="list-inline mb-2">
+                    <li class="list-inline-item"><span class="font-weight-bold text-uppercase">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/undistracted-me/">
+                                Firefox Extension</a></span></li>
+                    <li class="list-inline-item text-muted"><span>⋅</span></li>
+                    <li class="list-inline-item"><span class="font-weight-bold text-uppercase">
+                            <a href="https://github.com/sidbelbase/undistracted-me/archive/master.zip">
+                                Chrome Extension</a></span></li>
+                    <li class="list-inline-item text-muted"><span>⋅</span></li>
+                    <li class="list-inline-item">
+                        <span class="font-weight-bold text-uppercase">
+                            <a href="https://github.com/sidbelbase/undistracted-me">Github
+                                Repository</a></span></li>
+                </ul>
+            </div>
+        </div>
     </div>
+
 </header>
 
 <body>
@@ -59,7 +80,9 @@
     <script src="{{ url_for('static', filename= 'js/' + 'bootstrap.bundle.js') }}"></script>
     <script src="{{ url_for('static', filename='js/' + 'moment.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/' + 'moment-timezone-with-data.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/' + 'progressive-image.js') }}"></script>
     <script src="{{ url_for('static', filename= 'js/' + 'main.js') }}"></script>
+
 </body>
 
 </html>
