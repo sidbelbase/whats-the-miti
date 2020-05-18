@@ -34,8 +34,6 @@ header {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	animation-duration: 1.2s;
-	animation-name: bounceIn;
 }
 
 .main-area>#nepalimiti {
@@ -72,6 +70,11 @@ header {
 		transform: scale(1);
 		opacity: 1;
 	}
+}
+
+div {
+	animation-duration: 1.3s;
+	animation-name: bounceIn;
 }
 
 a,
