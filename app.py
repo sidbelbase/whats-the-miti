@@ -13,12 +13,12 @@ app.config["CORS_HEADERS"] = "Content-Type"
 
 
 def rotate_dict(old_dict, the_key):
-    new_dict = defaultdict(list)
+    new_dict = defaultdict(dict)
     for item in old_dict:
         for data in old_dict[item]:
             listby = data[the_key]
             count = data["count"]
-            new_dict[listby].append({item: count})
+            new_dict[listby].update({item: count})
     return new_dict
 
 
