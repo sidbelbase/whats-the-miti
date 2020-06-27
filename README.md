@@ -11,7 +11,7 @@ A distraction free nepali date & clock for your browser.
 
 ## API
 
-API is available on [https://whatsthemiti.herokuapp.com/api](https://whatsthemiti.herokuapp.com/api)
+API is available on [https://whatsthemiti.herokuapp.com/api/nepalimiti](https://whatsthemiti.herokuapp.com/api/nepalimiti)
 
 ## Installation
 

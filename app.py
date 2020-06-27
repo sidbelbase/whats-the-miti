@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+from flask_cors import CORS, cross_origin
 from collections import defaultdict
 from main.nepali import nepali_date
 from main.english import date_today, live_time
@@ -6,6 +7,9 @@ from time import sleep
 import requests
 
 app = Flask(__name__)
+cors = CORS(app)
+
+app.config["CORS_HEADERS"] = "Content-Type"
 
 
 def rotate_dict(old_dict, the_key):
@@ -33,7 +37,8 @@ def show_date():
     )
 
 
-@app.route("/api")
+@app.route("/api/nepalimiti")
+@cross_origin()
 def nepali_miti():
     nepalimiti = nepali_date()
     datetoday = date_today()
@@ -42,18 +47,20 @@ def nepali_miti():
 
 
 @app.route("/api/provinces")
+@cross_origin()
 def provinces():
-    provinces = requests.\
-        get("https://data.nepalcorona.info/api/v1/covid/summary").\
-        json()["province"]
+    provinces = requests.get(
+        "https://data.nepalcorona.info/api/v1/covid/summary"
+    ).json()["province"]
     return rotate_dict(provinces, "province")
 
 
 @app.route("/api/districts")
+@cross_origin()
 def districts():
-    districts = requests.\
-        get("https://data.nepalcorona.info/api/v1/covid/summary").\
-        json()["district"]
+    districts = requests.get(
+        "https://data.nepalcorona.info/api/v1/covid/summary"
+    ).json()["district"]
     return rotate_dict(districts, "district")
 
 
