@@ -116,6 +116,12 @@ def is_same_day(d1, d2):
     else:
         return False
 
+def add_zero(any_date):
+    if (any_date < 10):
+        return '0'+ str(any_date)
+    else:
+        return str(any_date)
+
 
 def is_leap_year(year):
     if year % 100 == 0:
@@ -139,16 +145,16 @@ def case(*args):
 def get_nepali_month(month):
     while switch(month):
         if case(1):
-            return "Baisakh"
+            return "Baishakh"
 
         if case(2):
             return "Jestha"
 
         if case(3):
-            return "Asar"
+            return "Ashadh"
 
         if case(4):
-            return "Sharwan"
+            return "Shrawan"
 
         if case(5):
             return "Bhadra"
@@ -157,13 +163,13 @@ def get_nepali_month(month):
             return "Ashwin"
 
         if case(7):
-            return "Karthik"
+            return "Kartik"
 
         if case(8):
-            return "Mangshir"
+            return "Mangsir"
 
         if case(9):
-            return "Paush"
+            return "Poush"
 
         if case(10):
             return "Magh"
@@ -238,7 +244,7 @@ def convert_to_nepali(yy, mm, dd):
         total_english_days -= 1
 
     # date_string = str(get_nepali_month(m)) + ' ' + str(total_nepali_days) + ', ' + str(y)
-    date_string = str(get_nepali_month(m)) + " " + str(total_nepali_days)
+    date_string = str(get_nepali_month(m)) + " " + add_zero(int(total_nepali_days))
 
     return date_string
 
