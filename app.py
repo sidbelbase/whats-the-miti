@@ -54,7 +54,7 @@ def second_filtered_districts(province_id):
     improved_districts = rotate_dict(districts, "district")
 
     for _id, district in improved_districts.items():
-        for _id in district_ids:
+        if _id in district_ids:
             second_half_districts.update({_id: district})
     return second_half_districts
 
