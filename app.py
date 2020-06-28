@@ -22,6 +22,51 @@ def rotate_dict(old_dict, the_key):
     return new_dict
 
 
+def first_filtered_districts(province_id):
+    first_half_districts = defaultdict(dict)
+    district_lists = requests.get(
+        "https://data.nepalcorona.info/api/v1/districts"
+    ).json()
+    for district in district_lists:
+        if district["province"] == int(province_id):
+            district_id = district["id"]
+            first_half_districts[district_id].update(
+                {"id": district["id"], "name": district["title_en"]}
+            )
+    return first_half_districts
+
+
+def second_filtered_districts(province_id):
+    district_ids = []
+    district_lists = requests.get(
+        "https://data.nepalcorona.info/api/v1/districts"
+    ).json()
+
+    for district in district_lists:
+        if district["province"] == int(province_id):
+            district_id = district["id"]
+            district_ids.append(district_id)
+
+    second_half_districts = defaultdict(dict)
+    districts = requests.get(
+        "https://data.nepalcorona.info/api/v1/covid/summary"
+    ).json()["district"]
+    improved_districts = rotate_dict(districts, "district")
+
+    for _id, district in improved_districts.items():
+        for _id in district_ids:
+            second_half_districts.update({_id: district})
+    return second_half_districts
+
+
+def dict_merger(first_dict, second_dict):
+    merger = defaultdict(dict)
+    for data in (first_dict, second_dict):
+        for key, val in data.items():
+            merger[key].update(val)
+    return merger
+
+
 @app.route("/")
 def show_date():
     nepalimiti = nepali_date()
@@ -76,8 +121,8 @@ def province_details(id):
     ).json()
     for province in provinces:
         improved.update(
-            {	
-            	"id": province["province_id"],
+            {
+                "id": province["province_id"],
                 "name": province["province_name"],
                 "samples": province["total_samples_collected"],
                 "tested": province["total_tested"],
@@ -97,13 +142,12 @@ def province_details(id):
     return improved
 
 
-@app.route("/api/covid/districts")
+@app.route("/api/covid/districts/<int:province_id>")
 @cross_origin()
-def districts():
-    districts = requests.get(
-        "https://data.nepalcorona.info/api/v1/covid/summary"
-    ).json()["district"]
-    return rotate_dict(districts, "district")
+def districts(province_id):
+    return dict_merger(
+        first_filtered_districts(province_id), second_filtered_districts(province_id)
+    )
 
 
 if __name__ == "__main__":
