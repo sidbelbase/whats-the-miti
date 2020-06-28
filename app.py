@@ -76,7 +76,8 @@ def province_details(id):
     ).json()
     for province in provinces:
         improved.update(
-            {
+            {	
+            	"id": province["province_id"],
                 "name": province["province_name"],
                 "samples": province["total_samples_collected"],
                 "tested": province["total_tested"],
