@@ -77,21 +77,20 @@ def province_details(id):
     for province in provinces:
         improved.update(
             {
-                province["province_id"]: {
-                    "name": province["province_name"],
-                    "samples": province["total_samples_collected"],
-                    "tested": province["total_tested"],
-                    "negative": province["total_negative"],
-                    "isolated": province["total_in_isolation"],
-                    "cases": province["total_positive"],
-                    "deaths": province["total_death"],
-                    "recovered": province["total_recovered"],
-                    "quarantined": province["in_quarantine"],
-                    "beds": province["num_of_bed"],
-                    "isolation_beds": province["num_of_isolation_bed"],
-                    "last_updated": province["update_date"],
-                    "occupied_isolation_beds": province["occupied_isolation_bed"],
-                }
+                "name": province["province_name"],
+                "samples": province["total_samples_collected"],
+                "tested": province["total_tested"],
+                "negative": province["total_negative"],
+                "isolated": province["total_in_isolation"],
+                "cases": province["total_positive"],
+                "deaths": province["total_death"],
+                "recovered": province["total_recovered"],
+                "quarantined": province["in_quarantine"],
+                "beds": province["num_of_bed"],
+                "isolation_beds": province["num_of_isolation_bed"],
+                "last_updated": province["update_date"],
+                "occupied_isolation_beds": province["occupied_isolation_bed"],
+                "occupied_ventilators": province["occupied_ventilators"],
             }
         )
     return improved
