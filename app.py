@@ -46,16 +46,58 @@ def nepali_miti():
     return {"nepali_miti": nepalimiti, "date_today": datetoday, "clock_time": livetime}
 
 
-@app.route("/api/provinces")
+@app.route("/api/covid/provinces")
 @cross_origin()
 def provinces():
+    improved = {}
     provinces = requests.get(
-        "https://data.nepalcorona.info/api/v1/covid/summary"
-    ).json()["province"]
-    return rotate_dict(provinces, "province")
+        "https://covidapi.mohp.gov.np/api/v1/stats/?province=all"
+    ).json()
+    for province in provinces:
+        improved.update(
+            {
+                province["province_id"]: {
+                    "name": province["province_name"],
+                    "cases": province["total_positive"],
+                    "deaths": province["total_death"],
+                    "recovered": province["total_recovered"],
+                }
+            }
+        )
+    return improved
 
 
-@app.route("/api/districts")
+@app.route("/api/covid/province/<int:id>")
+@cross_origin()
+def province_details(id):
+    improved = {}
+    provinces = requests.get(
+        f"https://covidapi.mohp.gov.np/api/v1/stats/?province={id}"
+    ).json()
+    for province in provinces:
+        improved.update(
+            {
+                province["province_id"]: {
+                    "name": province["province_name"],
+                    "samples": province["total_samples_collected"],
+                    "tested": province["total_tested"],
+                    "negative": province["total_negative"],
+                    "isolated": province["total_in_isolation"],
+                    "cases": province["total_positive"],
+                    "deaths": province["total_death"],
+                    "recovered": province["total_recovered"],
+                    "quarantined": province["in_quarantine"],
+                    "beds": province["num_of_bed"],
+                    "isolation_beds": province["num_of_isolation_bed"],
+                    "last_updated": province["update_date"],
+                    "occupied_isolation_beds": province["occupied_isolation_bed"],
+                }
+            }
+        )
+    return improved
+
+
+@app.route("/api/covid/districts")
 @cross_origin()
 def districts():
     districts = requests.get(
