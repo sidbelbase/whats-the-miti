@@ -28,11 +28,17 @@ def first_filtered_districts(province_id):
         "https://data.nepalcorona.info/api/v1/districts"
     ).json()
     for district in district_lists:
-        if district["province"] == int(province_id):
+        if province_id == "all":
             district_id = district["id"]
             first_half_districts[district_id].update(
                 {"id": district["id"], "name": district["title_en"]}
             )
+        else:
+            if district["province"] == int(province_id):
+                district_id = district["id"]
+                first_half_districts[district_id].update(
+                    {"id": district["id"], "name": district["title_en"]}
+                )
     return first_half_districts
 
 
@@ -43,9 +49,13 @@ def second_filtered_districts(province_id):
     ).json()
 
     for district in district_lists:
-        if district["province"] == int(province_id):
+        if province_id == "all":
             district_id = district["id"]
             district_ids.append(district_id)
+        else:
+            if district["province"] == int(province_id):
+                district_id = district["id"]
+                district_ids.append(district_id)
 
     second_half_districts = defaultdict(dict)
     districts = requests.get(
@@ -142,11 +152,11 @@ def province_details(id):
     return improved
 
 
-@app.route("/api/covid/districts/<int:province_id>")
+@app.route("/api/covid/districts/<string:any_params>")
 @cross_origin()
-def districts(province_id):
+def districts(any_params):
     return dict_merger(
-        first_filtered_districts(province_id), second_filtered_districts(province_id)
+        first_filtered_districts(any_params), second_filtered_districts(any_params)
     )
 
 
