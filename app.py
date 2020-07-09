@@ -31,7 +31,11 @@ def first_filtered_districts(province_id):
         if province_id == "all":
             district_id = district["id"]
             first_half_districts[district_id].update(
-                {"id": district["id"], "name": district["title_en"]}
+                {
+                    "id": district["id"],
+                    "name": district["title_en"],
+                    "coords": district["centroid"]["coordinates"],
+                }
             )
         else:
             if district["province"] == int(province_id):
