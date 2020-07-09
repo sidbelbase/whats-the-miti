@@ -2,7 +2,7 @@
 
 ##### NOTE: This repo is a flask implementation rewritten from [old applet](https://github.com/sidbelbase/nepali-datetime-applet) and is being actively developed for [several browser extensions.](https://github.com/sidbelbase/undistracted-me)
 
-<img src="static/images/hero.png" width="100%" height="auto">
+<img src="whatsthemiti/static/images/hero.png" width="100%" height="auto">
 
 A distraction free nepali date & clock for your browser.
 
@@ -44,3 +44,4 @@ python3 app.py
 3.  [x] Chrome Extension
 4.  [x] Firefox Extension
 5.  [ ] Linux Desktop Widget
+6.  [ ] Vscode Extensions
