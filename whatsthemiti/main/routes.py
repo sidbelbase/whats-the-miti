@@ -18,3 +18,9 @@ def show_date():
         nepali_miti=nepalimiti,
         title=title,
     )
+
+
+@main.route("/ping")
+def say_pong():
+    return "pong!"
+

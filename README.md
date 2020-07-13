@@ -4,14 +4,14 @@
 
 <img src="whatsthemiti/static/images/hero.png" width="100%" height="auto">
 
-A distraction free nepali date & clock for your browser.
+A distraction-free nepali date & clock for your browser.
 
 [Applet Version](https://github.com/sidbelbase/nepali-datetime-applet) |
 [Website Version](https://whatsthemiti.herokuapp.com/) | [Extension Version](https://addons.mozilla.org/en-US/firefox/addon/undistracted-me/)
 
 ## API
 
-API is available on [https://whatsthemiti.herokuapp.com/api/nepalimiti](https://whatsthemiti.herokuapp.com/api/nepalimiti)
+API is available on [https://aworkingapi.herokuapp.com/api/v1/nepalimiti](https://aworkingapi.herokuapp.com/api/v1/nepalimiti)
 
 ## Installation
 
@@ -43,5 +43,5 @@ python3 app.py
 2.  [x] Add APIs
 3.  [x] Chrome Extension
 4.  [x] Firefox Extension
-5.  [ ] Linux Desktop Widget
-6.  [ ] Vscode Extensions
+5.  [ ] Linux Taskbar Applet
+6.  [ ] Vscode Extension
