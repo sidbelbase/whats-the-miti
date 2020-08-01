@@ -7,11 +7,11 @@
 A distraction-free nepali date & clock for your browser.
 
 [Applet Version](https://github.com/sidbelbase/nepali-datetime-applet) |
-[Website Version](https://whatsthemiti.herokuapp.com/) | [Extension Version](https://addons.mozilla.org/en-US/firefox/addon/undistracted-me/)
+[Website Version](https://whatsthemiti.now.sh/) | [Extension Version](https://addons.mozilla.org/en-US/firefox/addon/undistracted-me/)
 
 ## API
 
-API is available on [https://aworkingapi.herokuapp.com/api/v1/nepalimiti](https://aworkingapi.herokuapp.com/api/v1/nepalimiti)
+API is available on [https://aworkingapi.now.sh/api/v1/nepalimiti](https://aworkingapi.now.sh/api/v1/nepalimiti)
 
 ## Installation
 
