@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Primary Meta Tags -->
-<title>{{title}} | What's the miti?</title>
-<meta name="robots" content="index, follow">
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="language" content="English">
-<meta name="serp-rank" position="1">
-<meta charset="UTF-8">
-<meta name="author" content="@sidbelbase">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
-<meta name="keywords"
-    content="Nepali Date, Distractionless, Nepali Calendar, Nepali App, Flask Application, Firefox Extension, Chrome Extension, Nepali Extension, Opera Extension, Chromium Edge Extension">
-<meta name="title" content="Distractionless Nepali Date">
-<meta name="description"
-    content="Nepali date with live clock right in your browser with extension support for your favourite browser.">
+    <!-- Primary Meta Tags -->
+    <title>{{title}} | What's the miti?</title>
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="language" content="English">
+    <meta name="serp-rank" position="1">
+    <meta charset="UTF-8">
+    <meta name="author" content="@sidbelbase">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords"
+        content="Nepali Date, Distractionless, Nepali Calendar, Nepali App, Flask Application, Firefox Extension, Chrome Extension, Nepali Extension, Opera Extension, Chromium Edge Extension">
+    <meta name="title" content="Distractionless Nepali Date">
+    <meta name="description"
+        content="Nepali date with live clock right in your browser with extension support for your favourite browser.">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://whatsthemiti.herokuapp.com/">
-<meta property="og:title" content="Distractionless Nepali Date">
-<meta property="og:description" content="Nepali date with live clock right in your browser">
-<meta property="og:image" content="/static/images/hero.png">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://whatsthemiti.herokuapp.com/">
+    <meta property="og:title" content="Distractionless Nepali Date">
+    <meta property="og:description" content="Nepali date with live clock right in your browser">
+    <meta property="og:image" content="/static/images/hero.png">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://whatsthemiti.herokuapp.com/">
-<meta property="twitter:title" content="Distractionless Nepali Date">
-<meta property="twitter:description" content="Nepali date with live clock right in your browser">
-<meta property="twitter:image" content="/static/images/hero.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://whatsthemiti.herokuapp.com/">
+    <meta property="twitter:title" content="Distractionless Nepali Date">
+    <meta property="twitter:description" content="Nepali date with live clock right in your browser">
+    <meta property="twitter:image" content="/static/images/hero.png">
 
-<!-- Links -->
-<link rel="shortcut icon" type="image/svg" href="{{ url_for('static', filename='images/' + 'favicon.svg') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/' + 'bootstrap.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/' + 'main.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/' + 'progressive-image.css') }}">
-</head>
+    <!-- Links -->
+    <link rel="shortcut icon" type="image/svg" href="{{ url_for('static', filename='images/' + 'favicon.svg') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/' + 'bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/' + 'main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/' + 'progressive-image.css') }}">
+    </head>
 
-<header class="masthead d-flex bgimg progressive replace">
-    <div class="container my-auto">
-        <div class="row no-gutters">
-            <div class="mx-auto text-center row main-area">
-                <div class="col" id="nepalimiti">
-                    <span>{{nepali_miti}}</span>
+    <header class="masthead d-flex bgimg progressive replace">
+        <div class="container my-auto">
+            <div class="row no-gutters">
+                <div class="mx-auto text-center row main-area">
+                    <div class="col" id="nepalimiti">
+                        <span>{{nepali_miti}}</span>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col" id="live-time">
+                        <span>{{live_time}}</span>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col" id="date-today">
+                        <span>{{date_today}}</span>
+                    </div>
                 </div>
-                <div class="w-100"></div>
-                <div class="col" id="live-time">
-                    <span>{{live_time}}</span>
-                </div>
-                <div class="w-100"></div>
-                <div class="col" id="date-today">
-                    <span>{{date_today}}</span>
+            </div>
+            <div class="row pt-3 pb-0 mt-2 mb-0">
+                <div class="col my-auto h-100 text-center text-lg-center">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><span class="font-weight-bold text-uppercase">
+                                <a href="https://addons.mozilla.org/en-US/firefox/addon/undistracted-me/">
+                                    Firefox Extension</a></span></li>
+                        <li class="list-inline-item text-muted"><span>⋅</span></li>
+                        <li class="list-inline-item"><span class="font-weight-bold text-uppercase">
+                                <a
+                                    href="https://chrome.google.com/webstore/detail/undistracted-me/dfgbijakkhepoonhaelocdmcleeehmef/">
+                                    Chrome Extension</a></span></li>
+                        <li class="list-inline-item text-muted"><span>⋅</span></li>
+                        <li class="list-inline-item">
+                            <span class="font-weight-bold text-uppercase">
+                                <a href="https://github.com/sidbelbase/undistracted-me">Github
+                                    Repository</a></span></li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="row pt-3 pb-0 mt-2 mb-0">
-            <div class="col my-auto h-100 text-center text-lg-center">
-                <ul class="list-inline mb-2">
-                    <li class="list-inline-item"><span class="font-weight-bold text-uppercase">
-                            <a href="https://addons.mozilla.org/en-US/firefox/addon/undistracted-me/">
-                                Firefox Extension</a></span></li>
-                    <li class="list-inline-item text-muted"><span>⋅</span></li>
-                    <li class="list-inline-item"><span class="font-weight-bold text-uppercase">
-                            <a href="https://chrome.google.com/webstore/detail/undistracted-me/dfgbijakkhepoonhaelocdmcleeehmef/">
-                                Chrome Extension</a></span></li>
-                    <li class="list-inline-item text-muted"><span>⋅</span></li>
-                    <li class="list-inline-item">
-                        <span class="font-weight-bold text-uppercase">
-                            <a href="https://github.com/sidbelbase/undistracted-me">Github
-                                Repository</a></span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-</header>
+    </header>
 
-<body>
-    <script src="{{ url_for('static', filename='js/' + 'jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename= 'js/' + 'bootstrap.bundle.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/' + 'moment.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/' + 'moment-timezone-with-data.js') }}"></script>
-    <script src="{{ url_for('static', filename= 'js/' + 'progressive-image.js') }}"></script>
-    <script src="{{ url_for('static', filename= 'js/' + 'main.js') }}"></script>
-
-</body>
+    <body>
+        <script src="{{ url_for('static', filename='js/' + 'jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/' + 'bootstrap.bundle.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/' + 'moment.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/' + 'moment-timezone-with-data.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/' + 'progressive-image.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/' + 'main.js') }}"></script>
+        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" /></noscript>
+    </body>
 
 </html>
